@@ -1,4 +1,84 @@
-nginx_proxy_send_timeout: 120s
+apiVersion: automationhub.ansible.com/v1beta1
+kind: AutomationHub
+metadata:
+  creationTimestamp: '2022-07-22T22:25:34Z'
+  generation: 1
+  managedFields:
+    - apiVersion: automationhub.ansible.com/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:spec':
+          'f:web':
+            .: {}
+            'f:replicas': {}
+          'f:nginx_proxy_read_timeout': {}
+          'f:nginx_proxy_connect_timeout': {}
+          'f:haproxy_timeout': {}
+          'f:content':
+            .: {}
+            'f:log_level': {}
+            'f:replicas': {}
+          'f:postgres_storage_requirements':
+            .: {}
+            'f:limits':
+              .: {}
+              'f:storage': {}
+            'f:requests':
+              .: {}
+              'f:storage': {}
+          'f:api':
+            .: {}
+            'f:log_level': {}
+            'f:replicas': {}
+          'f:gunicorn_timeout': {}
+          'f:loadbalancer_protocol': {}
+          'f:nginx_client_max_body_size': {}
+          'f:file_storage_access_mode': {}
+          .: {}
+          'f:postgres_resource_requirements':
+            .: {}
+            'f:limits':
+              .: {}
+              'f:cpu': {}
+              'f:memory': {}
+            'f:requests':
+              .: {}
+              'f:cpu': {}
+              'f:memory': {}
+          'f:loadbalancer_port': {}
+          'f:resource_manager':
+            .: {}
+            'f:replicas': {}
+          'f:route_tls_termination_mechanism': {}
+          'f:worker':
+            .: {}
+            'f:replicas': {}
+          'f:image_pull_policy': {}
+          'f:file_storage_size': {}
+          'f:nginx_proxy_send_timeout': {}
+          'f:gunicorn_content_workers': {}
+          'f:gunicorn_api_workers': {}
+          'f:ingress_type': {}
+          'f:no_log': {}
+      manager: Mozilla
+      operation: Update
+      time: '2022-07-22T22:25:34Z'
+    - apiVersion: automationhub.ansible.com/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:status':
+          .: {}
+          'f:conditions': {}
+      manager: ansible-operator
+      operation: Update
+      subresource: status
+      time: '2022-07-22T22:25:34Z'
+  name: example
+  namespace: ansible-automation-platform
+  resourceVersion: '40355'
+  uid: c9deb8f2-0a0c-453a-a338-d2684fb6e64c
+spec:
+  nginx_proxy_send_timeout: 120s
   gunicorn_content_workers: 2
   gunicorn_api_workers: 2
   route_tls_termination_mechanism: Edge
@@ -38,3 +118,13 @@ nginx_proxy_send_timeout: 120s
     replicas: 1
   worker:
     replicas: 2
+status:
+  conditions:
+    - lastTransitionTime: '2022-07-22T22:44:26Z'
+      reason: Failed
+      status: 'False'
+      type: Failure
+    - lastTransitionTime: '2022-07-22T22:44:26Z'
+      reason: Running
+      status: 'True'
+      type: Running
